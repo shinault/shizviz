@@ -1,0 +1,16 @@
+Package: shizviz
+Type: Package
+Title: Shiny Apps For Probability Visualizations
+Version: 0.1.0
+Authors@R: 
+    person(c("Gregory", "M."), "Shinault", 
+    email="gshinault@gmail.com", role=c("aut", "cre"))
+Maintainer: Gregory M. Shinault <gshinault@gmail.com>
+Description: Provides in-browser apps to elucidate concepts from probability 
+    and statistics
+License: GPL
+Imports:
+    shiny
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
