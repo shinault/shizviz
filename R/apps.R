@@ -8,3 +8,13 @@ binomialApproximation <- function() {
   cat("Press ESC key to stop server")
   shiny::runApp(list(ui = ba_ui, server = ba_server))
 }
+
+#' Plots a sample of correlated points
+#'
+#' Run a Shiny app in your web browser to plot a sample of correlated points.
+#'
+#' @export
+correlation <- function() {
+  cat("Press ESC key to stop server")
+  shiny::runApp(list(ui = corr_ui, server = corr_server))
+}
