@@ -47,7 +47,7 @@ ba_plot_panel <- shiny::mainPanel(
   shiny::h3('Visual Comparison of Approximations'),
   shiny::plotOutput('plotComparison'),
   shiny::h3('Quantitative Comparison of Approximations'),
-  shiny::verbatimTextOutput('probability_values')
+  shiny::tableOutput('probability_values')
 )
 
 ba_viz_page <- shiny::sidebarLayout(ba_param_panel, ba_plot_panel)

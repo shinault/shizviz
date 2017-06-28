@@ -1,27 +1,26 @@
-ba_server <- shiny::shinyServer(
-  function(input, output){
-    output$plotComparison <- shiny::renderPlot(
-      ba_plots(input$sample_size,
-               input$prob,
-               input$display_normal,
-               input$display_pois))
-    output$probability_values <- shiny::renderPrint(
-      ba_probs(input$sample_size,
-               input$prob,
-               input$lower_bound,
-               input$upper_bound))
-  }
-)
+ba_server <- function(input, output) {
+  output$plotComparison <- shiny::renderPlot(
+    ba_plots(input$sample_size,
+             input$prob,
+             input$display_normal,
+             input$display_pois))
+  output$probability_values <- shiny::renderTable(
+    ba_probs(input$sample_size,
+             input$prob,
+             input$lower_bound,
+             input$upper_bound))
+}
 
 #' Compute probabilities for Binomial, Poisson, Normal, and correct Normal
 ba_probs <- function(n, p, a, b) {
   mu <- n*p
   sigma <- sqrt(n*p*(1-p))
   if (a <= b) {
-    c(Actual = pbinom(b, n, p) - pbinom(a-1, n, p),
-      Poisson = ppois(b, mu) - ppois(a-1, mu),
-      Normal = pnorm(b, mu, sigma) - pnorm(a, mu, sigma),
-      NormalCorrection = pnorm(b+0.5, mu, sigma) - pnorm(a-0.5, mu, sigma))
+    data.frame(`Actual Probability` = pbinom(b, n, p) - pbinom(a-1, n, p),
+      `Poisson Approximation` = ppois(b, mu) - ppois(a-1, mu),
+      `Normal Approximation` = pnorm(b, mu, sigma) - pnorm(a, mu, sigma),
+      `Normal with Continuity Correction` = pnorm(b+0.5, mu, sigma) - pnorm(a-0.5, mu, sigma),
+      check.names = FALSE)
   }
   else {
     c(Actual = 0,
