@@ -6,7 +6,7 @@ ba_param_panel <- shiny::sidebarPanel(
                       'Sample Size: \\(n\\)',
                       25,
                       min=0,
-                      max=1000,
+                      max=500,
                       step=1
   ),
   shiny::numericInput('prob',
@@ -17,21 +17,8 @@ ba_param_panel <- shiny::sidebarPanel(
                       step=0.01
   ),
   shiny::h4('Probability Bounds'),
-  shiny::p('For \\(\\mathbb{P}(a \\leq X \\leq b)\\)'),
-  shiny::numericInput('lower_bound',
-                      'Lower Bound: \\(a\\)',
-                      10,
-                      min=0,
-                      max=1000,
-                      step=1
-  ),
-  shiny::numericInput('upper_bound',
-                      'Upper Bound: \\(b\\)',
-                      15,
-                      min=0,
-                      max=1000,
-                      step=1
-  ),
+  shiny::sliderInput("ab", min = 0, max = 500, value = c(10,15),
+                     label = 'For \\(\\mathbb{P}(a \\leq X \\leq b)\\)'),
   shiny::h4('Display Options'),
   shiny::checkboxInput('display_normal',
                        'Plot Normal Density Function',
