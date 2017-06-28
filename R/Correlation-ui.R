@@ -22,7 +22,7 @@ corr_plot_panel <- shiny::mainPanel(
   shiny::h3('Sample of Correlated Points \\(X, Y\\)'),
   shiny::plotOutput('corr_plot'),
   shiny::h3('Theoretical vs. Sample Correlation'),
-  shiny::verbatimTextOutput('corr_values')
+  shiny::tableOutput('corr_values')
 )
 
 corr_viz_page <- shiny::sidebarLayout(corr_param_panel, corr_plot_panel)
