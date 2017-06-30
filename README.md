@@ -17,8 +17,8 @@ devtools::install_github("shinault/shizviz")
 ## Available Visualizations
 
 The following commands call a visualization.
-* `bayesFormula()`: Runs a simulation of plot of the classic Bayes example, 
-testing accuracy rare diseases.
+* `bayesFormula()`: Runs a simulation and creates a plot of the classic Bayes
+example, testing accuracy rare diseases.
 * `binomialApproximation()`: Creates a probability density plot to compare the 
 binomial distribution to its approximations using the Normal distribution, the
 Poisson distribution, and the Normal distribution with a continuity correction.
