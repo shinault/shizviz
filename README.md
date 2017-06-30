@@ -22,6 +22,8 @@ example, testing accuracy rare diseases.
 * `binomialApproximation()`: Creates a probability density plot to compare the 
 binomial distribution to its approximations using the Normal distribution, the
 Poisson distribution, and the Normal distribution with a continuity correction.
+A version of this app with discussion is hosted
+[here](https://shinault.shinyapps.io/BinomialApprox/).
 * `correlation()`: Creates a scatter plot for a randoms sample of bivariate data
 with the user chosen correlation.
 
