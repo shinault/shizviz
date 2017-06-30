@@ -10,6 +10,7 @@ Description: Provides in-browser apps to elucidate concepts from probability
     and statistics
 License: GPL
 Imports:
+    ggplot2,
     mvtnorm,
     shiny
 Encoding: UTF-8
